@@ -1,4 +1,6 @@
+import React from "react";
 import logo from './logo.svg';
+import Componente from "./components/Componente";
 import './App.css';
 
 function App() {
@@ -7,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Editar <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -18,6 +20,23 @@ function App() {
           Learn React
         </a>
       </header>
+      <section>
+        <Componente>
+
+        </Componente>
+        <Componente msg="hola, soy un componente funcional desde una prop"  />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+      </section>
     </div>
   );
 }
