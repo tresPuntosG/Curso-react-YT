@@ -87,3 +87,60 @@ export class EventosES7 extends Component {
         )
     }
 }
+
+// function Boton (props){
+//     return(<button onClick={props.myOnClick}>Botón hecho componente</button>;)
+// }
+
+// MISMO BOTON USANDO UNA VARIABLE EXPRESADA - menos sintaxis
+// const Boton = (props) => (
+//     <button onClick={props.myOnClick}>Botón hecho componente</button>
+// );
+
+// SIMPLIFICANDO MAS CON DESTRUCTURACION:
+const Boton = ({myOnClick}) => (
+    <button onClick={myOnClick}>Botón hecho componente</button>
+);
+
+
+
+export class MasSobreEventos extends Component {
+    handleClick = (e, mensaje) => {
+        console.log(e);
+        console.log(e.nativeEvent);
+        console.log(e.target);
+        console.log(e.nativeEvent.target);
+        console.log(mensaje)
+
+    };
+
+    render(){
+        return (
+            <div>
+                <h2>Más sobre Eventos</h2>
+                <button onClick={(e) =>
+                     this.handleClick(e, "Hola, pasando parámetro desde un evento")
+                     }>
+                    Saludar
+                </button>
+
+                {/* ASI DIRECTAMENTE COMO SI FUERA UNA ETIQUETA JSX NO FUNCIONA */}
+                {/* <Boton onClick={(e) =>
+                     this.handleClick(e, "Hola, pasando parámetro desde un evento")
+                } /> */}
+                
+                {/* EVENTO PERSONALIZADO
+                Crear una PROP
+                que se la pasamos al COMPONENTE
+                y se la ASIGNAMOS al EVENTO (p ej   onClick)
+                de la etiqueta  JSX  que internamente este dentro del COMPONENTE                
+                */}
+                
+                <Boton myOnClick={(e) =>
+                     this.handleClick(e, "Hola, pasando parámetro desde un evento personalizado")
+                } />
+                                
+            </div>
+        )
+    }
+}
