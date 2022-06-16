@@ -7,7 +7,7 @@ export default function ScrollHooks(){
 
     useEffect(() => {
 
-        console.log("Moviendo el scroll");
+        // console.log("Moviendo el scroll");
 
         const detectarScroll = () => setScrollY(window.pageYOffset);
 
@@ -23,16 +23,17 @@ export default function ScrollHooks(){
                 // AC ASE PODRIAN HACER LAS LLAMADAS A UNA API ...UN TEMPORIZADOR ... ETC
 
     useEffect(()=>{
-        console.log("Fase de actualización");
+        // console.log("Fase de actualización");
     });         // SI LA LISTA DE DEPENDENCIAS NO ESTA DEFINIDA, EL EFECTO SE VUELVE A EJECUTAR CADA VEZ QUE SE RENDERICE EL COMPONENTE
     
+    /*
     useEffect(()=>{
         return()=>{
             console.log("Fase de desmontaje");
         };
      });      // RETORNANDO UNA FUNCION  EJECUTAMOS LA FASE DE DESMONTAJE 
                 // ACA SE PODRIA DESCONECTARSE DE API, LIMPIAR EVENTOS, ETC. para limpiar esa memoria del navegador
-
+     */
 
 
     return(
